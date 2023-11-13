@@ -19,11 +19,12 @@ with open("websites.txt", 'r', encoding='utf-8') as f:
 #Exercice 2
             if (r.status_code == HTTPStatus.OK):
                 load_dotenv()
-                EMAIL_SMTP = os.getenv("EMAIL_SMTP")
-                EMAIL_PASS = os.getenv("EMAIL_PASS")
-                EMAIL_USER = os.getenv("EMAIL_USER")
-                EMAIL_PORT = os.getenv("EMAIL_PORT")
-                DESTINATION_EMAIL = os.getenv("DESTINATION_EMAIL")
+                EMAIL_SMTP = "smtp.gmail.com"
+                EMAIL_PASS = "16235asfh"
+                EMAIL_USER = "jamnawty17@gmail.com"
+                EMAIL_PORT = 465
+                DESTINATION_EMAIL = "melvin.prevost@ecoles-epsi.net"
+                print(EMAIL_USER)
 
                 # Création de l'email
                 msg = MIMEText("Hello, this is a test email.")
