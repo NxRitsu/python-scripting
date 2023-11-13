@@ -26,12 +26,11 @@ Le test sur le fait d'être un doublon doit couvrir l'un des critères suivants 
 L'ensemble des fichiers doublons doit être retourné, par exemple avec le dossier `data` ci-joint votre script doit retourner : 
 ```
 Fichier ayant le même nom
-
-    data/premier_doublon.txt
-    data/logs/premier_doublon.txt
-    Fichier ayant le même contenu
-    data/second_d.ini
-    data/subfolder/subfolder/second_doublon.ini
+data/premier_doublon.txt
+data/logs/premier_doublon.txt
+Fichier ayant le même contenu
+data/second_d.ini
+data/subfolder/subfolder/second_doublon.ini
 ```
 
 ## Exercice 5 📏
