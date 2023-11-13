@@ -1,5 +1,5 @@
 # Python scripting 🐍
-L'objectif de ce dépôt est de s'entraîner à réaliser des scripts python. 
+L'objectif de ce dépôt est de s'entraîner à réaliser des scripts python. Fait dans le cadre du Module Python du Bachelor IT - SysOps à l'EPSI.
 
 ## Exercice 1 🖥️
 À partir du fichier `websites.txt`, implémentez un script permettant de vérifier que tous les sites sont bien up. 
