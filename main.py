@@ -4,6 +4,7 @@ import re
 from email.mime.text import MIMEText
 from http import HTTPStatus
 
+#Exercice 1
 with open("websites.txt", 'r', encoding='utf-8') as f:
     for line in f:
         print(line, end = '')
@@ -13,7 +14,8 @@ with open("websites.txt", 'r', encoding='utf-8') as f:
             print(line)
             print("\n")
             print(r.status_code)
-            if (r.status_code == HTTPStatus.OK):
+#Exercice 2
+            if (r.status_code != HTTPStatus.OK):
                 # Création de l'email
                 msg = MIMEText("Hello, this is a test email.")
                 msg['Subject'] = "Test Email"
