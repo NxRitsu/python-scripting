@@ -1,0 +1,2 @@
+smtp.google.com
+https://api.github.com/users/docusland

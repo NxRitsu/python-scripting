@@ -1,0 +1,3 @@
+duclos.xyz 443
+duclos.xyz 80
+duclos.xyz 40
