@@ -20,8 +20,8 @@ with open("websites.txt", 'r', encoding='utf-8') as f:
             print(r.status_code)
 #Exercice 2
             if (r.status_code == HTTPStatus.OK):
-                sender_email = "poalacassenito101@gmail.com"
-                receiver_email = "melvin.prevost@ecoles-espi.net"
+                sender_email = "votre_email@gmail.com"
+                receiver_email = "destination@example.com"
                 subject = "Site down"
                 body = "Corps de l'e-mail"
                 #attachment_path = "/chemin/vers/votre/fichier/attaché.txt"
@@ -29,8 +29,8 @@ with open("websites.txt", 'r', encoding='utf-8') as f:
                 # Paramètres du serveur SMTP de Gmail
                 smtp_server = "smtp.gmail.com"
                 smtp_port = 587
-                smtp_username = "poalacassenito101@gmail.com"
-                smtp_password = "6124asgg"
+                smtp_username = "votre_email@gmail.com"
+                smtp_password = "your_password"
 
                 # Création du message
                 message = MIMEMultipart()
