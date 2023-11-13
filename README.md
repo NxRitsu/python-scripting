@@ -10,6 +10,8 @@ Pour ce faire, vous aurez besoin d'utiliser une bibliothèque extérieure, `requ
 Pour ce faire, le script devra envoyer un email à une adresse mail spécifiée dans le fichier `.env`.
 Vous aurez probablement besoin d'une bibliothèque tierce, `smtplib` par exemple.
 
+Les identifiants de connexions utilisés sont faux
+
 ## Exercice 3 🔗
 Hormis le fait de tester des sites, il est parfois nécessaire de vérifier si des ports sont disponibles.
 Updatez le script précédent afin de vérifier les ports, vous avez pour cela le fichier `websites_and_ports.txt`.
