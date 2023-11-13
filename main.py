@@ -2,6 +2,8 @@ import requests
 import smtplib
 import re
 from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from email.mime.application import MIMEApplication
 from http import HTTPStatus
 from dotenv import load_dotenv
 import os
