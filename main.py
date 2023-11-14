@@ -3,7 +3,6 @@ import smtplib
 import re
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from email.mime.application import MIMEApplication
 from http import HTTPStatus
 from dotenv import load_dotenv
 import os
@@ -74,14 +73,13 @@ with open('websites_and_ports.txt', 'r') as fichier:
 
         # Diviser la ligne en mots en utilisant l'espace comme séparateur afin de prendre uniquement les ports
 
-        elements = ligne.split()
-        port_str = elements[1]
+        website, port_str = ligne.split()
 
         #On transforme la chaine de caractère en int
 
         port = int(port_str)
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        result = sock.connect_ex(('duclos.xyz', port))
+        result = sock.connect_ex((website, port))
         if result == 0:
             print("Port :", port, " is open")
         else:
