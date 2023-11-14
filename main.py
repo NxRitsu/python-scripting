@@ -13,12 +13,15 @@ import socket
 print("EXERCICE 1 :\n")
 with open("websites.txt", 'r', encoding='utf-8') as f:
     for line in f:
-        if re.match(r'^https', line):
+        line = line.strip()
+        try:
             r = requests.get(line)
-            print("\n")
-            print("Website : ",line)
-            print("\n")
-            print("Réponse ---> ",r.status_code,"\n")
+            print("Website : ", line)
+            print("Réponse ---> ", r.status_code, "\n")
+        except requests.exceptions.MissingSchema:
+            print(f"Erroneous Schema for url {line}")
+        except requests.exceptions.SSLError:
+            print(f"SSL missing for {line}")
 #Exercice 2
 """with open("websites.txt", 'r', encoding='utf-8') as f:
     for line in f:
