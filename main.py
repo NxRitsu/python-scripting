@@ -20,7 +20,10 @@ with open("websites.txt", 'r', encoding='utf-8') as f:
             print("\n")
             print("Réponse ---> ",r.status_code,"\n")
 #Exercice 2
-            """if (r.status_code == HTTPStatus.OK):
+"""with open("websites.txt", 'r', encoding='utf-8') as f:
+    for line in f:
+        if re.match(r'^https', line):
+            if (r.status_code == HTTPStatus.OK):
                 sender_email = "votre_email@gmail.com"
                 receiver_email = "destination@example.com"
                 subject = "Site down"
@@ -71,7 +74,7 @@ with open('websites_and_ports.txt', 'r') as fichier:
         elements = ligne.split()
         port_str = elements[1]
 
-        #On transforme la chaine de caractère du port en Int
+        #On transforme la chaine de caractère en int
 
         port = int(port_str)
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
