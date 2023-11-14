@@ -7,19 +7,20 @@ from email.mime.application import MIMEApplication
 from http import HTTPStatus
 from dotenv import load_dotenv
 import os
+import socket
 
 #Exercice 1
+print("EXERCICE 1 :\n")
 with open("websites.txt", 'r', encoding='utf-8') as f:
     for line in f:
-        print(line, end = '')
         if re.match(r'^https', line):
             r = requests.get(line)
             print("\n")
-            print(line)
+            print("Website : ",line)
             print("\n")
-            print(r.status_code)
+            print("Réponse ---> ",r.status_code,"\n")
 #Exercice 2
-            if (r.status_code == HTTPStatus.OK):
+            """if (r.status_code == HTTPStatus.OK):
                 sender_email = "votre_email@gmail.com"
                 receiver_email = "destination@example.com"
                 subject = "Site down"
@@ -42,10 +43,10 @@ with open("websites.txt", 'r', encoding='utf-8') as f:
                 message.attach(MIMEText(body, 'plain'))
 
                 # Ajout d'une pièce jointe
-                """with open(attachment_path, "rb") as attachment:
+                with open(attachment_path, "rb") as attachment:
                     part = MIMEApplication(attachment.read(), Name=os.path.basename(attachment_path))
                     part['Content-Disposition'] = f'attachment; filename="{os.path.basename(attachment_path)}"'
-                    message.attach(part)"""
+                    message.attach(part)
 
                 # Connexion au serveur SMTP
                 with smtplib.SMTP(smtp_server, smtp_port) as server:
@@ -58,4 +59,26 @@ with open("websites.txt", 'r', encoding='utf-8') as f:
                     # Envoi de l'e-mail
                     server.send_message(message)
 
-                print("L'e-mail a été envoyé avec succès.")
+                print("L'e-mail a été envoyé avec succès.")"""
+#Exercice 3
+print("EXERCICE 3 : \n")
+with open('websites_and_ports.txt', 'r') as fichier:
+    # Lire chaque ligne du fichier
+    for ligne in fichier:
+
+        # Diviser la ligne en mots en utilisant l'espace comme séparateur afin de prendre uniquement les ports
+
+        elements = ligne.split()
+        port_str = elements[1]
+
+        #On transforme la chaine de caractère du port en Int
+
+        port = int(port_str)
+        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        result = sock.connect_ex(('duclos.xyz', port))
+        if result == 0:
+            print("Port :", port, " is open")
+        else:
+            print("Port :", port, " is not open")
+        sock.close()
+
